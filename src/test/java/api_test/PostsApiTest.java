@@ -35,7 +35,7 @@ public class PostsApiTest {
 	@Test
 	void testNegativeGetPost() {
 		Response response = postsApi.getPost(9999);
-		assertThat(response.statusCode(),equalTo(200));
+		assertThat(response.statusCode(),equalTo(404));
 		assertThat(response.jsonPath().getString("id"),emptyOrNullString());
 		assertThat(response.jsonPath().getString("userId"),emptyOrNullString());
 		assertThat(response.jsonPath().getString("title"),emptyOrNullString());
